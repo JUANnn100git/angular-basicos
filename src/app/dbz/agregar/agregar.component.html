@@ -1,0 +1,36 @@
+<h3>Agregar <small>{{ nuevo.nombre }}</small></h3>
+<hr>
+
+<form (ngSubmit)="agregar()">
+    <input 
+        type="text"
+        placeholder="Nombre"
+        name="nombre"
+        [(ngModel)]="nuevo.nombre"
+    />
+    <!--
+        [value]="nuevo.nombre" 
+        (input)="cambiarNombre($event)"
+        Llaves cuadras es para hacer referencia a una propiedad
+        Parentisis es para emitir o escuchar eventos
+
+        Para que funcione el ngModel, se debe importar el FormsModule
+        en el app.module.ts
+         [] = propiedad
+         () = evento
+         combinamos ambos para hacer referencia a una propiedad
+            y escuchar un evento
+
+        [()] -> Two way data binding
+    -->
+    <input 
+        type="number"
+        placeholder="0"
+        name="poder"
+        [(ngModel)]="nuevo.poder"
+    />
+
+    <button type="submit">
+        Agregar
+    </button>
+</form>
